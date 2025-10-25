@@ -6,17 +6,24 @@
   <title>Plataforma ONG - Cadastro</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header>
     <div class="container">
       <h1>Plataforma ONG</h1>
+
       <nav aria-label="Menu principal">
         <ul class="menu">
           <li><a href="index.html">Início</a></li>
           <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
         </ul>
       </nav>
+
+      <div class="acessibilidade">
+        <button id="dark-mode-toggle" aria-pressed="false">Modo Escuro</button>
+        <button id="high-contrast-toggle" aria-pressed="false">Alto Contraste</button>
+      </div>
     </div>
   </header>
 
@@ -36,7 +43,8 @@
           <input type="email" id="email" name="email" required aria-required="true">
 
           <label for="cpf">CPF:</label>
-          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" required aria-required="true">
+          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00"
+                 pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" required aria-required="true">
 
           <label for="telefone">Telefone:</label>
           <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required aria-required="true">
@@ -84,7 +92,8 @@
           <textarea id="bio" name="bio" rows="4" placeholder="Conte sua experiência..." required aria-required="true"></textarea>
 
           <label>
-            <input type="checkbox" name="termos" required aria-required="true"> Concordo com os termos de voluntariado.
+            <input type="checkbox" id="termos" name="termos" required aria-required="true">
+            Concordo com os termos de voluntariado.
           </label>
         </fieldset>
 
@@ -99,6 +108,7 @@
   <footer>
     <p>© 2025 Plataforma ONG — Protótipo Acadêmico</p>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>

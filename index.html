@@ -6,35 +6,34 @@
   <title>Plataforma ONG - Início</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header>
     <div class="container">
       <h1>Plataforma ONG</h1>
-      <nav>
+      <nav aria-label="Menu principal">
         <ul class="menu">
-          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html" aria-current="page">Início</a></li>
           <li><a href="projetos.html">Projetos</a></li>
           <li><a href="cadastro.html">Cadastro</a></li>
         </ul>
-        <nav aria-label="Menu principal">
-  <ul class="menu">
-    <li><a href="index.html">Início</a></li>
-    <li><a href="projetos.html">Projetos</a></li>
-    <li><a href="cadastro.html">Cadastro</a></li>
-  </ul>
-  <button id="dark-mode-toggle">Modo Escuro</button>
-  <button id="high-contrast-toggle">Alto Contraste</button>
-</nav>
-
       </nav>
+      <div class="acessibilidade">
+        <button id="dark-mode-toggle" aria-pressed="false">Modo Escuro</button>
+        <button id="high-contrast-toggle" aria-pressed="false">Alto Contraste</button>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="intro">
       <h2>Sobre a Organização</h2>
-      <p>A Plataforma ONG tem como missão conectar pessoas e transformar comunidades através de projetos sociais sustentáveis e transparentes.</p>
-      <img src="imagens/voluntarios.jpg" width="500" height="700" alt="Equipe da ONG reunida" class="imagem">
+      <p>
+        A Plataforma ONG tem como missão conectar pessoas e transformar comunidades
+        através de projetos sociais sustentáveis e transparentes.
+      </p>
+      <img src="imagens/voluntarios.jpg" width="500" height="700"
+           alt="Equipe da ONG reunida" class="imagem">
     </section>
 
     <section>
@@ -48,7 +47,10 @@
 
     <section>
       <h2>Entre em Contato</h2>
-      <p>Email: <a href="Gmail:pedroherubio@gmail.com">pedroherubio@gmail.com</a></p>
+      <p>
+        E-mail:
+        <a href="mailto:pedroherubio@gmail.com">pedroherubio@gmail.com</a>
+      </p>
       <p>Telefone: (11) 99999-9999</p>
       <p>Endereço: Rua Solidária, 100 - São Paulo/SP</p>
     </section>
@@ -57,5 +59,7 @@
   <footer>
     <p>© 2025 Plataforma ONG — Protótipo Acadêmico</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

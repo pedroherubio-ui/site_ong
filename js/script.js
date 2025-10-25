@@ -1,31 +1,50 @@
+// js/script.js — versão corrigida e compatível com páginas separadas
+
 document.addEventListener("DOMContentLoaded", () => {
+  const THEME_KEY = "site_theme"; // "light" | "dark"
+  const CONTRAST_KEY = "site_contrast"; // "normal" | "high"
 
-  const mainContent = document.querySelector("main");
-  const links = document.querySelectorAll(".menu a");
+  const darkModeBtn = document.getElementById("dark-mode-toggle");
+  const highContrastBtn = document.getElementById("high-contrast-toggle");
 
-  const templates = {
-    index: document.getElementById("index-template").innerHTML,
-    projetos: document.getElementById("projetos-template").innerHTML,
-    cadastro: document.getElementById("cadastro-template").innerHTML
-  };
+  // Função para aplicar preferências salvas de tema e contraste
+  function applyPreferences() {
+    const theme = localStorage.getItem(THEME_KEY) || "light";
+    const contrast = localStorage.getItem(CONTRAST_KEY) || "normal";
 
-  function loadPage(page) {
-    mainContent.innerHTML = templates[page] || "<p>Página não encontrada</p>";
-    if (page === "cadastro") initForm();
+    document.body.classList.toggle("dark-mode", theme === "dark");
+    document.body.classList.toggle("high-contrast", contrast === "high");
+
+    if (darkModeBtn) darkModeBtn.setAttribute("aria-pressed", theme === "dark");
+    if (highContrastBtn) highContrastBtn.setAttribute("aria-pressed", contrast === "high");
   }
 
-  links.forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      const href = link.getAttribute("href").replace(".html", "");
-      loadPage(href);
-    });
-  });
+  // Alternar modo escuro
+  function toggleDarkMode() {
+    const isDark = document.body.classList.toggle("dark-mode");
+    localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+    if (darkModeBtn) darkModeBtn.setAttribute("aria-pressed", isDark);
+  }
 
-  function initForm() {
-    const form = document.getElementById("form-cadastro");
-    if (!form) return;
+  // Alternar alto contraste
+  function toggleHighContrast() {
+    const isHigh = document.body.classList.toggle("high-contrast");
+    localStorage.setItem(CONTRAST_KEY, isHigh ? "high" : "normal");
+    if (highContrastBtn) highContrastBtn.setAttribute("aria-pressed", isHigh);
+  }
 
+  // Liga eventos aos botões
+  if (darkModeBtn) darkModeBtn.addEventListener("click", toggleDarkMode);
+  if (highContrastBtn) highContrastBtn.addEventListener("click", toggleHighContrast);
+
+  // Aplica preferências salvas ao carregar
+  applyPreferences();
+
+  // ------------------------------
+  // Validação de formulário (somente na página de cadastro)
+  // ------------------------------
+  const form = document.getElementById("form-cadastro");
+  if (form) {
     function validarCPF(cpf) { return /^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$/.test(cpf); }
     function validarTelefone(tel) { return /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/.test(tel); }
     function validarCEP(cep) { return /^\d{5}-?\d{3}$/.test(cep); }
@@ -96,14 +115,4 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => sucesso.remove(), 5000);
     });
   }
-
-  loadPage("index");
-  
 });
-document.getElementById("dark-mode-toggle").addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-});
-document.getElementById("high-contrast-toggle").addEventListener("click", () => {
-  document.body.classList.toggle("high-contrast");
-});
-

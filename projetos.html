@@ -6,17 +6,22 @@
   <title>Plataforma ONG - Projetos</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header>
     <div class="container">
       <h1>Plataforma ONG</h1>
-      <nav>
+      <nav aria-label="Menu principal">
         <ul class="menu">
           <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
           <li><a href="cadastro.html">Cadastro</a></li>
         </ul>
       </nav>
+      <div class="acessibilidade">
+        <button id="dark-mode-toggle" aria-pressed="false">Modo Escuro</button>
+        <button id="high-contrast-toggle" aria-pressed="false">Alto Contraste</button>
+      </div>
     </div>
   </header>
 
@@ -27,25 +32,37 @@
       <article>
         <h3>Mutirão Ambiental</h3>
         <img src="imagens/limpeza.jpg" alt="Voluntários limpando uma praia" class="imagem">
-        <p>Projeto voltado à limpeza de praias e conscientização sobre o descarte de resíduos. Envolvemos escolas e comunidades locais para promover o cuidado com o meio ambiente.</p>
+        <p>
+          Projeto voltado à limpeza de praias e conscientização sobre o descarte de resíduos.
+          Envolvemos escolas e comunidades locais para promover o cuidado com o meio ambiente.
+        </p>
       </article>
 
       <article>
         <h3>Educação para Todos</h3>
         <img src="imagens/educ.jpg" alt="Crianças estudando em sala de aula" class="imagem">
-        <p>Iniciativa que fornece materiais e aulas de reforço escolar para crianças em situação de vulnerabilidade social.</p>
+        <p>
+          Iniciativa que fornece materiais e aulas de reforço escolar para crianças em situação de vulnerabilidade social.
+        </p>
       </article>
     </section>
 
     <section>
       <h2>Como Apoiar</h2>
-      <p>Você pode contribuir como <strong>voluntário</strong> ou através de <strong>doações financeiras</strong>. Cada ajuda faz a diferença!</p>
-      <p><a href="cadastro.html" class="botao">Quero participar</a></p>
+      <p>
+        Você pode contribuir como <strong>voluntário</strong> ou através de <strong>doações financeiras</strong>.
+        Cada ajuda faz a diferença!
+      </p>
+      <p>
+        <a href="cadastro.html" class="botao">Quero participar</a>
+      </p>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Plataforma ONG — Protótipo Acadêmico</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
