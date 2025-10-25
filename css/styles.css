@@ -88,6 +88,25 @@ section {
   grid-column: 1 / -1;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+
+body.dark-mode button {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
 .imagem {
   width: 100%;
   height: auto;
