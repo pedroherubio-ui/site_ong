@@ -20,30 +20,29 @@
   --space-32: 32px;
   --space-48: 48px;
   --space-64: 64px;
-  
+
   --grid-columns: 12;
   --grid-gap: var(--space-16);
 }
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header, footer {
-  background-color: #0366d6;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--neutral-light);
+  color: var(--neutral-dark);
+  line-height: 1.6;
 }
 
 .container {
   width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: auto;
 }
+
 
 .menu {
   list-style: none;
