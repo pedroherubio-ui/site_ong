@@ -98,5 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadPage("index");
-
+  
 });
+document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+document.getElementById("high-contrast-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("high-contrast");
+});
+
