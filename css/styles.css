@@ -20,6 +20,9 @@
   --space-32: 32px;
   --space-48: 48px;
   --space-64: 64px;
+  
+  --grid-columns: 12;
+  --grid-gap: var(--space-16);
 }
 body {
   font-family: Arial, sans-serif;
