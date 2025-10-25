@@ -168,6 +168,16 @@ button:hover {
   margin-top: var(--space-16);
 }
 
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+
 .alert {
   padding: var(--space-16);
   border-radius: 6px;
@@ -203,4 +213,19 @@ footer {
 
 @media (max-width: 480px) {
   h2 { font-size: var(--font-size-md); }
+}
+
+body.high-contrast {
+  background-color: #000;
+  color: #fff;
+}
+
+body.high-contrast a {
+  color: #ffd700;
+}
+
+body.high-contrast button {
+  background-color: #000;
+  color: #ffd700;
+  border: 2px solid #fff;
 }
