@@ -37,3 +37,23 @@
       erro.remove();
     }
   }
+
+    form.addEventListener("submit", e => {})
+    e.preventDefault();
+
+    let valido = true;
+
+    const nome = document.getElementById("nome");
+    const email = document.getElementById("email");
+    const cpf = document.getElementById("cpf");
+    const telefone = document.getElementById("telefone");
+    const nascimento = document.getElementById("nascimento");
+    const cep = document.getElementById("cep");
+    const endereco = document.getElementById("endereco");
+    const cidade = document.getElementById("cidade");
+    const estado = document.getElementById("estado");
+    const area = document.getElementById("area");
+    const bio = document.getElementById("bio");
+    const termos = document.querySelector("input[name='termos']");
+
+    [nome, email, cpf, telefone, nascimento, cep, endereco, cidade, estado, area, bio, termos].forEach(limparErro);
