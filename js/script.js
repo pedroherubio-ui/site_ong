@@ -57,3 +57,65 @@
     const termos = document.querySelector("input[name='termos']");
 
     [nome, email, cpf, telefone, nascimento, cep, endereco, cidade, estado, area, bio, termos].forEach(limparErro);
+
+    if (nome.value.trim().length < 3) {
+      mostrarErro(nome, "O nome deve ter pelo menos 3 caracteres.");
+      valido = false;
+    }
+
+    if (!email.value.includes("@")) {
+      mostrarErro(email, "Digite um e-mail válido.");
+      valido = false;
+    }
+
+    if (!validarCPF(cpf.value)) {
+      mostrarErro(cpf, "CPF inválido. Formato: 000.000.000-00");
+      valido = false;
+    }
+
+    if (!validarTelefone(telefone.value)) {
+      mostrarErro(telefone, "Telefone inválido. Formato: (00) 00000-0000");
+      valido = false;
+    }
+
+    if (!nascimento.value) {
+      mostrarErro(nascimento, "Informe sua data de nascimento.");
+      valido = false;
+    }
+
+    if (!validarCEP(cep.value)) {
+      mostrarErro(cep, "CEP inválido. Formato: 00000-000");
+      valido = false;
+    }
+
+    if (!endereco.value.trim()) {
+      mostrarErro(endereco, "Informe seu endereço.");
+      valido = false;
+    }
+
+    if (!cidade.value.trim()) {
+      mostrarErro(cidade, "Informe sua cidade.");
+      valido = false;
+    }
+
+    if (!estado.value) {
+      mostrarErro(estado, "Selecione um estado.");
+      valido = false;
+    }
+
+    if (!area.value) {
+      mostrarErro(area, "Selecione uma área de interesse.");
+      valido = false;
+    }
+
+    if (!bio.value.trim()) {
+      mostrarErro(bio, "Conte-nos um pouco sobre você.");
+      valido = false;
+    }
+
+    if (!termos.checked) {
+      mostrarErro(termos, "Você deve concordar com os termos.");
+      valido = false;
+    }
+
+    if (!valido) return;
