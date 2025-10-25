@@ -204,3 +204,36 @@ figcaption {
   padding: var(--space-16);
   margin-top: var(--space-32);
 }
+
+@media (max-width: 1200px) {
+  .cards-container > * { flex: 1 1 calc(50% - var(--space-16)); }
+}
+
+@media (max-width: 768px) {
+  main { grid-template-columns: 1fr; }
+  .cards-container > * { flex: 1 1 100%; }
+
+  .nav-list {
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: var(--space-8);
+    border-radius: 4px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 { font-size: var(--font-size-md); }
+  .brand { font-size: var(--font-size-lg); }
+}
