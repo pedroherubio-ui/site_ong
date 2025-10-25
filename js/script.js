@@ -119,3 +119,32 @@
     }
 
     if (!valido) return;
+
+    const voluntario = {
+      nome: nome.value,
+      email: email.value,
+      cpf: cpf.value,
+      telefone: telefone.value,
+      nascimento: nascimento.value,
+      cep: cep.value,
+      endereco: endereco.value,
+      cidade: cidade.value,
+      estado: estado.value,
+      area: area.value,
+      bio: bio.value
+    };
+
+    let lista = JSON.parse(localStorage.getItem("voluntarios")) || [];
+    lista.push(voluntario);
+    localStorage.setItem("voluntarios", JSON.stringify(lista));
+
+    const sucesso = document.createElement("div");
+    sucesso.classList.add("alert", "alert-success");
+    sucesso.textContent = "Cadastro realizado com sucesso!";
+    form.parentElement.insertBefore(sucesso, form);
+
+    form.reset();
+
+    setTimeout(() => sucesso.remove(), 5000);
+
+   
